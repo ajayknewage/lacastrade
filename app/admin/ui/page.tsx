@@ -1,19 +1,718 @@
-import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
+import ChartFour from "@/components/Charts/ChartFour";
+import ChartOne from "@/components/Charts/ChartOne";
+import ChartThree from "@/components/Charts/ChartThree";
+import ChartTwo from "@/components/Charts/ChartTwo";
+import CheckboxFive from "@/components/Checkboxes/CheckboxFive";
+import CheckboxFour from "@/components/Checkboxes/CheckboxFour";
+import CheckboxOne from "@/components/Checkboxes/CheckboxOne";
+import CheckboxThree from "@/components/Checkboxes/CheckboxThree";
+import CheckboxTwo from "@/components/Checkboxes/CheckboxTwo";
+import SwitcherFour from "@/components/Switchers/SwitcherFour";
+import SwitcherOne from "@/components/Switchers/SwitcherOne";
+import SwitcherThree from "@/components/Switchers/SwitcherThree";
+import SwitcherTwo from "@/components/Switchers/SwitcherTwo";
+import TableOne from "@/components/Tables/TableOne";
+import TableThree from "@/components/Tables/TableThree";
+import TableTwo from "@/components/Tables/TableTwo";
+
 import { Metadata } from "next";
+import Link from "next/link";
 export const metadata: Metadata = {
-  title: "Buttons Page | Next.js E-commerce Dashboard Template",
-  description: "This is Buttons page for TailAdmin Next.js",
+  title: "Ui | ReCastTrade",
+  description: "",
   // other metadata
 };
 
-const Buttons = () => {
+const Ui = () => {
   return (
     <>
-      <Breadcrumb pageName="Buttons" />
+      <Breadcrumb pageName="Ui" />
+
+      <div className="grid grid-cols-1 gap-9 sm:grid-cols-2">
+        <div className="flex flex-col gap-9">
+          {/* <!-- Input Fields --> */}
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                Input Fields
+              </h3>
+            </div>
+            <div className="flex flex-col gap-5.5 p-6.5">
+              <div>
+                <label className="mb-3 block text-black dark:text-white">
+                  Default Input
+                </label>
+                <input
+                  type="text"
+                  placeholder="Default Input"
+                  className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                />
+              </div>
+
+              <div>
+                <label className="mb-3 block text-black dark:text-white">
+                  Active Input
+                </label>
+                <input
+                  type="text"
+                  placeholder="Active Input"
+                  className="w-full rounded-lg border-[1.5px] border-primary bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-form-input"
+                />
+              </div>
+
+              <div>
+                <label className="mb-3 block font-medium text-black dark:text-white">
+                  Disabled label
+                </label>
+                <input
+                  type="text"
+                  placeholder="Disabled label"
+                  disabled
+                  className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary dark:disabled:bg-black"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* <!-- Toggle switch input --> */}
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                Toggle switch input
+              </h3>
+            </div>
+            <div className="flex flex-col gap-5.5 p-6.5">
+              <SwitcherOne />
+              <SwitcherTwo />
+              <SwitcherThree />
+              <SwitcherFour />
+            </div>
+          </div>
+
+          {/* <!-- Time and date --> */}
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                Time and date
+              </h3>
+            </div>
+            <div className="flex flex-col gap-5.5 p-6.5">
+              <div>
+                <label className="mb-3 block text-black dark:text-white">
+                  Date picker
+                </label>
+                <div className="relative">
+                  <input
+                    type="date"
+                    className="custom-input-date custom-input-date-1 w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="mb-3 block text-black dark:text-white">
+                  Select date
+                </label>
+                <div className="relative">
+                  <input
+                    type="date"
+                    className="custom-input-date custom-input-date-2 w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* <!-- File upload --> */}
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                File upload
+              </h3>
+            </div>
+            <div className="flex flex-col gap-5.5 p-6.5">
+              <div>
+                <label className="mb-3 block text-black dark:text-white">
+                  Attach file
+                </label>
+                <input
+                  type="file"
+                  className="w-full cursor-pointer rounded-lg border-[1.5px] border-stroke bg-transparent font-medium outline-none transition file:mr-5 file:border-collapse file:cursor-pointer file:border-0 file:border-r file:border-solid file:border-stroke file:bg-whiter file:py-3 file:px-5 file:hover:bg-primary file:hover:bg-opacity-10 focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:file:border-form-strokedark dark:file:bg-white/30 dark:file:text-white dark:focus:border-primary"
+                />
+              </div>
+
+              <div>
+                <label className="mb-3 block text-black dark:text-white">
+                  Attach file
+                </label>
+                <input
+                  type="file"
+                  className="w-full rounded-md border border-stroke p-3 outline-none transition file:mr-4 file:rounded file:border-[0.5px] file:border-stroke file:bg-[#EEEEEE] file:py-1 file:px-2.5 file:text-sm file:font-medium focus:border-primary file:focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:file:border-strokedark dark:file:bg-white/30 dark:file:text-white"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-9">
+          {/* <!-- Textarea Fields --> */}
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                Textarea Fields
+              </h3>
+            </div>
+            <div className="flex flex-col gap-5.5 p-6.5">
+              <div>
+                <label className="mb-3 block text-black dark:text-white">
+                  Default textarea
+                </label>
+                <textarea
+                  rows={6}
+                  placeholder="Default textarea"
+                  className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                ></textarea>
+              </div>
+
+              <div>
+                <label className="mb-3 block text-black dark:text-white">
+                  Active textarea
+                </label>
+                <textarea
+                  rows={6}
+                  placeholder="Active textarea"
+                  className="w-full rounded-lg border-[1.5px] border-primary bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-form-input"
+                ></textarea>
+              </div>
+
+              <div>
+                <label className="mb-3 block text-black dark:text-white">
+                  Disabled textarea
+                </label>
+                <textarea
+                  rows={6}
+                  disabled
+                  placeholder="Disabled textarea"
+                  className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary dark:disabled:bg-black"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          {/* <!-- Checkbox and radio --> */}
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                Checkbox and radio
+              </h3>
+            </div>
+            <div className="flex flex-col gap-5.5 p-6.5">
+              <CheckboxOne />
+              <CheckboxTwo />
+              <CheckboxThree />
+              <CheckboxFour />
+              <CheckboxFive />
+            </div>
+          </div>
+
+          {/* <!-- Select input --> */}
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                Select input
+              </h3>
+            </div>
+            <div className="flex flex-col gap-5.5 p-6.5">
+              <div>
+                <label className="mb-3 block text-black dark:text-white">
+                  Select Country
+                </label>
+                <div className="relative z-20 bg-white dark:bg-form-input">
+                  <span className="absolute top-1/2 left-4 z-30 -translate-y-1/2">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g opacity="0.8">
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M10.0007 2.50065C5.85852 2.50065 2.50065 5.85852 2.50065 10.0007C2.50065 14.1428 5.85852 17.5007 10.0007 17.5007C14.1428 17.5007 17.5007 14.1428 17.5007 10.0007C17.5007 5.85852 14.1428 2.50065 10.0007 2.50065ZM0.833984 10.0007C0.833984 4.93804 4.93804 0.833984 10.0007 0.833984C15.0633 0.833984 19.1673 4.93804 19.1673 10.0007C19.1673 15.0633 15.0633 19.1673 10.0007 19.1673C4.93804 19.1673 0.833984 15.0633 0.833984 10.0007Z"
+                          fill="#637381"
+                        ></path>
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M0.833984 9.99935C0.833984 9.53911 1.20708 9.16602 1.66732 9.16602H18.334C18.7942 9.16602 19.1673 9.53911 19.1673 9.99935C19.1673 10.4596 18.7942 10.8327 18.334 10.8327H1.66732C1.20708 10.8327 0.833984 10.4596 0.833984 9.99935Z"
+                          fill="#637381"
+                        ></path>
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M7.50084 10.0008C7.55796 12.5632 8.4392 15.0301 10.0006 17.0418C11.5621 15.0301 12.4433 12.5632 12.5005 10.0008C12.4433 7.43845 11.5621 4.97153 10.0007 2.95982C8.4392 4.97153 7.55796 7.43845 7.50084 10.0008ZM10.0007 1.66749L9.38536 1.10547C7.16473 3.53658 5.90275 6.69153 5.83417 9.98346C5.83392 9.99503 5.83392 10.0066 5.83417 10.0182C5.90275 13.3101 7.16473 16.4651 9.38536 18.8962C9.54325 19.069 9.76655 19.1675 10.0007 19.1675C10.2348 19.1675 10.4581 19.069 10.6159 18.8962C12.8366 16.4651 14.0986 13.3101 14.1671 10.0182C14.1674 10.0066 14.1674 9.99503 14.1671 9.98346C14.0986 6.69153 12.8366 3.53658 10.6159 1.10547L10.0007 1.66749Z"
+                          fill="#637381"
+                        ></path>
+                      </g>
+                    </svg>
+                  </span>
+                  <select className="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-12 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
+                    <option value="">USA</option>
+                    <option value="">UK</option>
+                    <option value="">Canada</option>
+                  </select>
+                  <span className="absolute top-1/2 right-4 z-10 -translate-y-1/2">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g opacity="0.8">
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                          fill="#637381"
+                        ></path>
+                      </g>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <label className="mb-3 block text-black dark:text-white">
+                  Multiselect Dropdown
+                </label>
+                <div className="relative z-20 w-full rounded border border-stroke p-1.5 pr-8 font-medium outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
+                  <div className="flex flex-wrap items-center">
+                    <span className="m-1.5 flex items-center justify-center rounded border-[.5px] border-stroke bg-gray py-1.5 px-2.5 text-sm font-medium dark:border-strokedark dark:bg-white/30">
+                      Design
+                      <span className="cursor-pointer pl-2 hover:text-danger">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M9.35355 3.35355C9.54882 3.15829 9.54882 2.84171 9.35355 2.64645C9.15829 2.45118 8.84171 2.45118 8.64645 2.64645L6 5.29289L3.35355 2.64645C3.15829 2.45118 2.84171 2.45118 2.64645 2.64645C2.45118 2.84171 2.45118 3.15829 2.64645 3.35355L5.29289 6L2.64645 8.64645C2.45118 8.84171 2.45118 9.15829 2.64645 9.35355C2.84171 9.54882 3.15829 9.54882 3.35355 9.35355L6 6.70711L8.64645 9.35355C8.84171 9.54882 9.15829 9.54882 9.35355 9.35355C9.54882 9.15829 9.54882 8.84171 9.35355 8.64645L6.70711 6L9.35355 3.35355Z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span className="m-1.5 flex items-center justify-center rounded border-[.5px] border-stroke bg-gray py-1.5 px-2.5 text-sm font-medium dark:border-strokedark dark:bg-white/30">
+                      Development
+                      <span className="cursor-pointer pl-2 hover:text-danger">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M9.35355 3.35355C9.54882 3.15829 9.54882 2.84171 9.35355 2.64645C9.15829 2.45118 8.84171 2.45118 8.64645 2.64645L6 5.29289L3.35355 2.64645C3.15829 2.45118 2.84171 2.45118 2.64645 2.64645C2.45118 2.84171 2.45118 3.15829 2.64645 3.35355L5.29289 6L2.64645 8.64645C2.45118 8.84171 2.45118 9.15829 2.64645 9.35355C2.84171 9.54882 3.15829 9.54882 3.35355 9.35355L6 6.70711L8.64645 9.35355C8.84171 9.54882 9.15829 9.54882 9.35355 9.35355C9.54882 9.15829 9.54882 8.84171 9.35355 8.64645L6.70711 6L9.35355 3.35355Z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                  <select
+                    name=""
+                    id=""
+                    className="absolute top-0 left-0 z-20 h-full w-full bg-transparent opacity-0"
+                  >
+                    <option value="">Option</option>
+                    <option value="">Option</option>
+                  </select>
+                  <span className="absolute top-1/2 right-4 z-10 -translate-y-1/2">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g opacity="0.8">
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                          fill="#637381"
+                        ></path>
+                      </g>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 gap-9 sm:grid-cols-2 mt-8">
+        <div className="flex flex-col gap-9">
+          {/* <!-- Contact Form --> */}
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                Contact Form
+              </h3>
+            </div>
+            <form action="#">
+              <div className="p-6.5">
+                <div className="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                  <div className="w-full xl:w-1/2">
+                    <label className="mb-2.5 block text-black dark:text-white">
+                      First name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter your first name"
+                      className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                    />
+                  </div>
+
+                  <div className="w-full xl:w-1/2">
+                    <label className="mb-2.5 block text-black dark:text-white">
+                      Last name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter your last name"
+                      className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-4.5">
+                  <label className="mb-2.5 block text-black dark:text-white">
+                    Email <span className="text-meta-1">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                </div>
+
+                <div className="mb-4.5">
+                  <label className="mb-2.5 block text-black dark:text-white">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Select subject"
+                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                </div>
+
+                <div className="mb-4.5">
+                  <label className="mb-2.5 block text-black dark:text-white">
+                    Subject
+                  </label>
+                  <div className="relative z-20 bg-transparent dark:bg-form-input">
+                    <select className="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
+                      <option value="">Type your subject</option>
+                      <option value="">USA</option>
+                      <option value="">UK</option>
+                      <option value="">Canada</option>
+                    </select>
+                    <span className="absolute top-1/2 right-4 z-30 -translate-y-1/2">
+                      <svg
+                        className="fill-current"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g opacity="0.8">
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                            fill=""
+                          ></path>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <label className="mb-2.5 block text-black dark:text-white">
+                    Message
+                  </label>
+                  <textarea
+                    rows={6}
+                    placeholder="Type your message"
+                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  ></textarea>
+                </div>
+
+                <button className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-9">
+          {/* <!-- Sign In Form --> */}
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                Sign In Form
+              </h3>
+            </div>
+            <form action="#">
+              <div className="p-6.5">
+                <div className="mb-4.5">
+                  <label className="mb-2.5 block text-black dark:text-white">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2.5 block text-black dark:text-white">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Enter password"
+                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                </div>
+
+                <div className="mt-5 mb-5.5 flex items-center justify-between">
+                  <label htmlFor="formCheckbox" className="flex cursor-pointer">
+                    <div className="relative pt-0.5">
+                      <input
+                        type="checkbox"
+                        id="formCheckbox"
+                        className="taskCheckbox sr-only"
+                      />
+                      <div className="box mr-3 flex h-5 w-5 items-center justify-center rounded border border-stroke dark:border-strokedark">
+                        <span className="text-white opacity-0">
+                          <svg
+                            className="fill-current"
+                            width="10"
+                            height="7"
+                            viewBox="0 0 10 7"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              clipRule="evenodd"
+                              d="M9.70685 0.292804C9.89455 0.480344 10 0.734667 10 0.999847C10 1.26503 9.89455 1.51935 9.70685 1.70689L4.70059 6.7072C4.51283 6.89468 4.2582 7 3.9927 7C3.72721 7 3.47258 6.89468 3.28482 6.7072L0.281063 3.70701C0.0986771 3.5184 -0.00224342 3.26578 3.785e-05 3.00357C0.00231912 2.74136 0.10762 2.49053 0.29326 2.30511C0.4789 2.11969 0.730026 2.01451 0.992551 2.01224C1.25508 2.00996 1.50799 2.11076 1.69683 2.29293L3.9927 4.58607L8.29108 0.292804C8.47884 0.105322 8.73347 0 8.99896 0C9.26446 0 9.51908 0.105322 9.70685 0.292804Z"
+                              fill=""
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <p>Remember me</p>
+                  </label>
+
+                  <a href="#" className="text-sm text-primary">
+                    Forget password?
+                  </a>
+                </div>
+
+                <button className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray">
+                  Sign In
+                </button>
+              </div>
+            </form>
+          </div>
+
+          {/* <!-- Sign Up Form --> */}
+          <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
+              <h3 className="font-medium text-black dark:text-white">
+                Sign Up Form
+              </h3>
+            </div>
+            <form action="#">
+              <div className="p-6.5">
+                <div className="mb-4.5">
+                  <label className="mb-2.5 block text-black dark:text-white">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Enter your full name"
+                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                </div>
+
+                <div className="mb-4.5">
+                  <label className="mb-2.5 block text-black dark:text-white">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                </div>
+
+                <div className="mb-4.5">
+                  <label className="mb-2.5 block text-black dark:text-white">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Enter password"
+                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                </div>
+
+                <div className="mb-5.5">
+                  <label className="mb-2.5 block text-black dark:text-white">
+                    Re-type Password
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Re-enter password"
+                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                </div>
+
+                <button className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray">
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-12 gap-4 md:gap-6 2xl:gap-7.5 mt-8">
+        <div className="col-span-12">
+          <ChartFour />
+        </div>
+        <ChartOne />
+        <ChartTwo />
+        <ChartThree />
+      </div>
+
+      <div className="flex flex-col gap-10 mt-8">
+        <TableOne />
+        <TableTwo />
+        <TableThree />
+      </div>
+
+      <div className="rounded-sm border border-stroke bg-white p-4 shadow-default dark:border-strokedark dark:bg-boxdark md:p-6 xl:p-9 mt-8">
+        <div className="flex flex-col gap-7.5">
+          {/* <!-- Alerts Item --> */}
+          <div className="flex w-full border-l-6 border-warning bg-warning bg-opacity-[15%] px-7 py-8 shadow-md dark:bg-[#1B1B24] dark:bg-opacity-30 md:p-9">
+            <div className="mr-5 flex h-9 w-9 items-center justify-center rounded-lg bg-warning bg-opacity-30">
+              <svg
+                width="19"
+                height="16"
+                viewBox="0 0 19 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.50493 16H17.5023C18.6204 16 19.3413 14.9018 18.8354 13.9735L10.8367 0.770573C10.2852 -0.256858 8.70677 -0.256858 8.15528 0.770573L0.156617 13.9735C-0.334072 14.8998 0.386764 16 1.50493 16ZM10.7585 12.9298C10.7585 13.6155 10.2223 14.1433 9.45583 14.1433C8.6894 14.1433 8.15311 13.6155 8.15311 12.9298V12.9015C8.15311 12.2159 8.6894 11.688 9.45583 11.688C10.2223 11.688 10.7585 12.2159 10.7585 12.9015V12.9298ZM8.75236 4.01062H10.2548C10.6674 4.01062 10.9127 4.33826 10.8671 4.75288L10.2071 10.1186C10.1615 10.5049 9.88572 10.7455 9.50142 10.7455C9.11929 10.7455 8.84138 10.5028 8.79579 10.1186L8.13574 4.75288C8.09449 4.33826 8.33984 4.01062 8.75236 4.01062Z"
+                  fill="#FBBF24"
+                ></path>
+              </svg>
+            </div>
+            <div className="w-full">
+              <h5 className="mb-3 text-lg font-semibold text-[#9D5425]">
+                Attention needed
+              </h5>
+              <p className="leading-relaxed text-[#D0915C]">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry&apos;s standard
+                dummy text ever since the 1500s, when
+              </p>
+            </div>
+          </div>
+          {/* <!-- Alerts Item --> */}
+          <div className="flex w-full border-l-6 border-[#34D399] bg-[#34D399] bg-opacity-[15%] px-7 py-8 shadow-md dark:bg-[#1B1B24] dark:bg-opacity-30 md:p-9">
+            <div className="mr-5 flex h-9 w-full max-w-[36px] items-center justify-center rounded-lg bg-[#34D399]">
+              <svg
+                width="16"
+                height="12"
+                viewBox="0 0 16 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.2984 0.826822L15.2868 0.811827L15.2741 0.797751C14.9173 0.401867 14.3238 0.400754 13.9657 0.794406L5.91888 9.45376L2.05667 5.2868C1.69856 4.89287 1.10487 4.89389 0.747996 5.28987C0.417335 5.65675 0.417335 6.22337 0.747996 6.59026L0.747959 6.59029L0.752701 6.59541L4.86742 11.0348C5.14445 11.3405 5.52858 11.5 5.89581 11.5C6.29242 11.5 6.65178 11.3355 6.92401 11.035L15.2162 2.11161C15.5833 1.74452 15.576 1.18615 15.2984 0.826822Z"
+                  fill="white"
+                  stroke="white"
+                ></path>
+              </svg>
+            </div>
+            <div className="w-full">
+              <h5 className="mb-3 text-lg font-semibold text-black dark:text-[#34D399] ">
+                Message Sent Successfully
+              </h5>
+              <p className="text-base leading-relaxed text-body">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.
+              </p>
+            </div>
+          </div>
+          {/* <!-- Alerts Item --> */}
+          <div className="flex w-full border-l-6 border-[#F87171] bg-[#F87171] bg-opacity-[15%] px-7 py-8 shadow-md dark:bg-[#1B1B24] dark:bg-opacity-30 md:p-9">
+            <div className="mr-5 flex h-9 w-full max-w-[36px] items-center justify-center rounded-lg bg-[#F87171]">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 13 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.4917 7.65579L11.106 12.2645C11.2545 12.4128 11.4715 12.5 11.6738 12.5C11.8762 12.5 12.0931 12.4128 12.2416 12.2645C12.5621 11.9445 12.5623 11.4317 12.2423 11.1114C12.2422 11.1113 12.2422 11.1113 12.2422 11.1113C12.242 11.1111 12.2418 11.1109 12.2416 11.1107L7.64539 6.50351L12.2589 1.91221L12.2595 1.91158C12.5802 1.59132 12.5802 1.07805 12.2595 0.757793C11.9393 0.437994 11.4268 0.437869 11.1064 0.757418C11.1063 0.757543 11.1062 0.757668 11.106 0.757793L6.49234 5.34931L1.89459 0.740581L1.89396 0.739942C1.57364 0.420019 1.0608 0.420019 0.740487 0.739944C0.42005 1.05999 0.419837 1.57279 0.73985 1.89309L6.4917 7.65579ZM6.4917 7.65579L1.89459 12.2639L1.89395 12.2645C1.74546 12.4128 1.52854 12.5 1.32616 12.5C1.12377 12.5 0.906853 12.4128 0.758361 12.2645L1.1117 11.9108L0.758358 12.2645C0.437984 11.9445 0.437708 11.4319 0.757539 11.1116C0.757812 11.1113 0.758086 11.111 0.75836 11.1107L5.33864 6.50287L0.740487 1.89373L6.4917 7.65579Z"
+                  fill="#ffffff"
+                  stroke="#ffffff"
+                ></path>
+              </svg>
+            </div>
+            <div className="w-full">
+              <h5 className="mb-3 font-semibold text-[#B45454]">
+                There were 1 errors with your submission
+              </h5>
+              <ul>
+                <li className="leading-relaxed text-[#CD5D5D]">
+                  Lorem Ipsum is simply dummy text of the printing
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* <!-- Normal Button Items --> */}
-      <div className="mb-10 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+      <div className="mb-10 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark mt-8">
         <div className="border-b border-stroke px-7 py-4 dark:border-strokedark">
           <h3 className="font-medium text-black dark:text-white">
             Normal Button
@@ -473,4 +1172,4 @@ const Buttons = () => {
   );
 };
 
-export default Buttons;
+export default Ui;

@@ -1,6 +1,7 @@
 import { BRAND } from "@/types/brand";
 import Image from "next/image";
 import DropdownDefault from "../Dropdowns/DropdownDefault";
+import SortButton from "../SortButton";
 
 const brandData: BRAND[] = [
   {
@@ -63,6 +64,7 @@ const TableFour: React.FC = () => {
             <div className="p-2.5 xl:p-4">
               <h5 className="text-sm font-medium uppercase xsm:text-base">
                 Source
+              <SortButton />
               </h5>
             </div>
             <div className="p-2.5 text-center xl:p-4">

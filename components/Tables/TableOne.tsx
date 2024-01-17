@@ -1,5 +1,6 @@
 import { BRAND } from "@/types/brand";
 import Image from "next/image";
+import SortButton from "../SortButton";
 
 const brandData: BRAND[] = [
   {
@@ -53,30 +54,35 @@ const TableOne = () => {
 
       <div className="flex flex-col">
         <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
-          <div className="p-2.5 xl:p-5">
+          <div className="p-2.5 xl:p-5 flex gap-2">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Source
             </h5>
+            <SortButton />
           </div>
-          <div className="p-2.5 text-center xl:p-5">
+          <div className="p-2.5 text-center xl:p-5 flex gap-2">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Visitors
             </h5>
+            <SortButton />
           </div>
-          <div className="p-2.5 text-center xl:p-5">
+          <div className="p-2.5 text-center xl:p-5 flex gap-2">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Revenues
             </h5>
+            <SortButton />
           </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-5">
+          <div className="p-2.5 text-center xl:p-5 flex gap-2">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Sales
             </h5>
+            <SortButton />
           </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-5">
+          <div className="p-2.5 text-center xl:p-5 flex gap-2">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Conversion
             </h5>
+            <SortButton />
           </div>
         </div>
 
