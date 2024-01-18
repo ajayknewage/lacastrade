@@ -3,7 +3,8 @@ import Image from "next/image";
 
 import { Metadata } from "next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
+import { Gallery } from "@/components/ProductDetails";
 export const metadata: Metadata = {
   title: "Product | ReCastTrade",
   description: "",
@@ -15,24 +16,8 @@ const ProductDetails = () => {
     <>
       <Breadcrumb pageName="Product Details" />
 
-      <div className="flex gap-10">
-        <div className="">
-          <div
-            className="overflow-hidden rounded-sm border border-stroke bg-white px-5 pt-7 pb-7 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5"
-            style={{ width: "500px", height: "500px" }}
-          >
-            <Image
-              src={"/images/cards/cards-04.png"}
-              alt="image"
-              width={500}
-              height={500}
-              className="object-cover rounded-sm"
-              style={{
-                height: "100%",
-              }}
-            />
-          </div>
-        </div>
+      <div className="flex flex-col lg:flex-row gap-10">
+        <Gallery />
         <div className="flex flex-col">
           <div>North America | Woman | Bottom</div>
           <div className="text-title-xxl">Classic Retro Women Jeans</div>
@@ -55,7 +40,7 @@ const ProductDetails = () => {
             <span className="font-semibold">Product Description</span>
             <p className="whitespace-pre-line">
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              industry. Lorem Ipsum has been the industrys standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book. It has
               survived not only five centuries, but also the leap into
@@ -82,8 +67,28 @@ const ProductDetails = () => {
               <span className="mb-1.5 text-black dark:text-white">
                 Ester Howard
               </span>
-              <div className="flex gap-2.5">
-                <FontAwesomeIcon icon={faStar} className="" />
+              <div className="flex gap-1 mt-1">
+                <FontAwesomeIcon
+                  icon={faStar}
+                  size="sm"
+                  className="text-primary"
+                />
+                <FontAwesomeIcon
+                  icon={faStar}
+                  size="sm"
+                  className="text-primary"
+                />
+                <FontAwesomeIcon
+                  icon={faStar}
+                  size="sm"
+                  className="text-primary"
+                />
+                <FontAwesomeIcon
+                  icon={faStarHalfStroke}
+                  size="sm"
+                  className="text-primary"
+                />
+                <FontAwesomeIcon icon={faStar} size="sm" className="" />
               </div>
             </div>
           </div>
