@@ -167,10 +167,10 @@ const User = () => {
               "border-b border-stroke dark:border-strokedark px-4 md:px-10"
             }
           >
-            <Tab selectedClassName="border-stroke dark:border-strokedark text-black font-semibold">
+            <Tab selectedClassName="border-stroke dark:border-strokedark text-black dark:text-white font-semibold">
               Personal Details
             </Tab>
-            <Tab selectedClassName="border-stroke dark:border-strokedark text-black font-semibold">
+            <Tab selectedClassName="border-stroke dark:border-strokedark text-black dark:text-white font-semibold">
               Products
             </Tab>
           </TabList>
