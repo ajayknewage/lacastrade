@@ -8,6 +8,7 @@ import CheckboxFour from "@/components/Checkboxes/CheckboxFour";
 import CheckboxOne from "@/components/Checkboxes/CheckboxOne";
 import CheckboxThree from "@/components/Checkboxes/CheckboxThree";
 import CheckboxTwo from "@/components/Checkboxes/CheckboxTwo";
+import Pagination from "@/components/Pagination";
 import SwitcherFour from "@/components/Switchers/SwitcherFour";
 import SwitcherOne from "@/components/Switchers/SwitcherOne";
 import SwitcherThree from "@/components/Switchers/SwitcherThree";
@@ -1168,6 +1169,9 @@ const Ui = () => {
           </div>
         </div>
       </div>
+
+      {/* <!-- Pagination --> */}
+      <Pagination />
     </>
   );
 };

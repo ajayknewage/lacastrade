@@ -7,6 +7,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Link from "next/link";
 import PersonalDetails from "./personal-details";
 import TableThree from "@/components/Tables/TableThree";
+import Pagination from "@/components/Pagination";
 
 const Statistics = () => (
   <div className="mx-auto mt-4.5 mb-5.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F] bg-white">
@@ -180,6 +181,10 @@ const User = () => {
           </TabPanel>
           <TabPanel className={"mb-4 md:mb-10"}>
             <TableThree noBorder />
+            <div className="mt-5 flex justify-end px-4 md:px-10">
+              {" "}
+              <Pagination />
+            </div>
           </TabPanel>
         </Tabs>
       </div>
