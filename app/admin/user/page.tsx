@@ -4,15 +4,9 @@ import Image from "next/image";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
-import { Metadata } from "next";
 import Link from "next/link";
 import PersonalDetails from "./personal-details";
 import TableThree from "@/components/Tables/TableThree";
-export const metadata: Metadata = {
-  title: "Profile | ReCastTrade",
-  description: "",
-  // other metadata
-};
 
 const Statistics = () => (
   <div className="mx-auto mt-4.5 mb-5.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F] bg-white">
