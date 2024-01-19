@@ -8,6 +8,8 @@ import Loader from "@/components/common/Loader";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 
+import "react-tabs/style/react-tabs.css";
+
 export default function RootLayout({
   children,
 }: {
