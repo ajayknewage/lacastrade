@@ -8,6 +8,7 @@ import CheckboxFour from "@/components/Checkboxes/CheckboxFour";
 import CheckboxOne from "@/components/Checkboxes/CheckboxOne";
 import CheckboxThree from "@/components/Checkboxes/CheckboxThree";
 import CheckboxTwo from "@/components/Checkboxes/CheckboxTwo";
+import CustomModal from "@/components/CustomModal";
 import Pagination from "@/components/Pagination";
 import SwitcherFour from "@/components/Switchers/SwitcherFour";
 import SwitcherOne from "@/components/Switchers/SwitcherOne";
@@ -1172,6 +1173,11 @@ const Ui = () => {
 
       {/* <!-- Pagination --> */}
       <Pagination />
+      {/* <!-- Pagination --> */}
+
+      {/* <!-- Modal --> */}
+      <CustomModal />
+      {/* <!-- Modal --> */}
     </>
   );
 };

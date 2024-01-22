@@ -179,7 +179,7 @@ const User = () => {
           <TabPanel>
             <PersonalDetails />
           </TabPanel>
-          <TabPanel className={"mb-4 md:mb-10"}>
+          <TabPanel className={"mb-4 md:mb-10 "}>
             <TableThree noBorder />
             <div className="mt-5 flex justify-end px-4 md:px-10">
               {" "}

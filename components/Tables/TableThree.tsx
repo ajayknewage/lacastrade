@@ -34,8 +34,8 @@ const TableThree: FC<{ noBorder?: boolean }> = ({ noBorder }) => {
       className={`rounded-sm ${
         noBorder
           ? ""
-          : "border border-stroke dark:border-strokedark dark:bg-boxdark shadow-default"
-      } bg-white px-5 pt-6 pb-2.5 sm:px-7.5 xl:pb-1`}
+          : "border border-stroke dark:border-strokedark shadow-default"
+      } bg-white dark:bg-boxdark px-5 pt-6 pb-2.5 sm:px-7.5 xl:pb-1`}
     >
       <div className="max-w-full overflow-x-auto">
         <table className="w-full table-auto">
