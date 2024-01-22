@@ -1,4 +1,6 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
+import OrderSummary from "@/components/Order/OrderSummary";
+import OrderedItems from "@/components/Order/OrderedItems";
 import Stepper from "@/components/Stepper";
 import {
   faChevronRight,
@@ -35,6 +37,64 @@ const OrderDetails = () => {
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark p-2 col-start-1 col-end-8">
             <Stepper />
           </div>
+          <div className="grid grid-flow-row grid-rows-2 lg:grid-flow-col lg:grid-cols-3 lg:grid-rows-1 mt-2 gap-3">
+            <div className="lg:col-start-1 lg:col-end-3">
+              <OrderedItems />
+            </div>
+
+            <div className="lg:col-start-3 lg:col-end-3">
+              <OrderSummary />
+            </div>
+          </div>
+          <div className="grid grid-flow-row grid-rows-2 lg:grid-flow-col lg:grid-cols-3 lg:grid-rows-1 mt-2 gap-2">
+            <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark p-8 lg:col-start-1 lg:col-end-1">
+              <div className="rounded-sm  bg-white dark:bg-boxdark h-full">
+                <div className="py-3">
+                  <h4 className="text-lg font-semibold text-black dark:text-white">
+                    BILLING INFORMATION
+                  </h4>
+                </div>
+                <div>
+                  <div>Payment Type: Credit Card</div>
+                  <div>{`Provider: Visa ending in 2851`}</div>
+                  <div>{`San Francisco, CA 94107`}</div>{" "}
+                  <div>{`Valid Date: 02/2020`}</div> <div>{`CVV: xxx`}</div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark p-8 lg:col-start-2 lg:col-end-2">
+              <div className="rounded-sm  bg-white dark:bg-boxdark h-full">
+                <div className="py-3">
+                  <h4 className="text-lg font-semibold text-black dark:text-white">
+                    SHIPPING INFORMATION
+                  </h4>
+                </div>
+                <div>
+                  <div>Stanley Jones</div>
+                  <div>{`795 Folsom Ave, Suite 600`}</div>
+                  <div>{`San Francisco, CA 94107`}</div>{" "}
+                  <div>{`P: (123) 456-7890`}</div>{" "}
+                  <div>{`M: (+01) 12345 67890`}</div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark p-8 lg:col-start-3 lg:col-end-3">
+              <div className="rounded-sm  bg-white dark:bg-boxdark h-full">
+                <div className="py-3">
+                  <h4 className="text-lg font-semibold text-black dark:text-white">
+                    ORDER SUMMARY
+                  </h4>
+                </div>
+                <div>
+                  <div>UPS Delivery</div>
+                  <div>{`Order ID : #BM31`}</div>
+                  <div>{`San Francisco, CA 94107`}</div>{" "}
+                  <div>{`Payment Mode : COD`}</div>{" "}
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-flow-row grid-rows-2 lg:grid-flow-col lg:grid-cols-2 lg:grid-rows-1 mt-2">
             <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark p-10 lg:col-start-1 lg:col-end-1">
               <span className="">Product Details</span>
@@ -120,8 +180,10 @@ const OrderDetails = () => {
                     </div>
                   </div>
                   <div className="flex items-center justify-end cursor-pointer hover:shadow-1 px-4 rounded-sm">
-                    {" "}
-                    <FontAwesomeIcon icon={faChevronRight} size="2x" />
+                    <Link href={"/admin/user"}>
+                      {" "}
+                      <FontAwesomeIcon icon={faChevronRight} size="2x" />
+                    </Link>
                   </div>
                 </div>
 
@@ -169,8 +231,10 @@ const OrderDetails = () => {
                     </div>
                   </div>
                   <div className="flex items-center justify-end cursor-pointer hover:shadow-1 px-4 rounded-sm">
-                    {" "}
-                    <FontAwesomeIcon icon={faChevronRight} size="2x" />
+                    <Link href={"/admin/user"}>
+                      {" "}
+                      <FontAwesomeIcon icon={faChevronRight} size="2x" />
+                    </Link>
                   </div>
                 </div>
               </div>

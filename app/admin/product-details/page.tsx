@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import { Gallery } from "@/components/ProductDetails";
+import Link from "next/link";
 export const metadata: Metadata = {
   title: "Product | ReCastTrade",
   description: "",
@@ -63,34 +64,36 @@ const ProductDetails = () => {
                 alt="User"
               />
             </div>
-            <div>
-              <span className="mb-1.5 text-black dark:text-white">
-                Ester Howard
-              </span>
-              <div className="flex gap-1 mt-1">
-                <FontAwesomeIcon
-                  icon={faStar}
-                  size="sm"
-                  className="text-primary"
-                />
-                <FontAwesomeIcon
-                  icon={faStar}
-                  size="sm"
-                  className="text-primary"
-                />
-                <FontAwesomeIcon
-                  icon={faStar}
-                  size="sm"
-                  className="text-primary"
-                />
-                <FontAwesomeIcon
-                  icon={faStarHalfStroke}
-                  size="sm"
-                  className="text-primary"
-                />
-                <FontAwesomeIcon icon={faStar} size="sm" className="" />
+            <Link href={"/admin/user"}>
+              <div>
+                <span className="mb-1.5 text-black dark:text-white">
+                  Ester Howard
+                </span>
+                <div className="flex gap-1 mt-1">
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    size="sm"
+                    className="text-primary"
+                  />
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    size="sm"
+                    className="text-primary"
+                  />
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    size="sm"
+                    className="text-primary"
+                  />
+                  <FontAwesomeIcon
+                    icon={faStarHalfStroke}
+                    size="sm"
+                    className="text-primary"
+                  />
+                  <FontAwesomeIcon icon={faStar} size="sm" className="" />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

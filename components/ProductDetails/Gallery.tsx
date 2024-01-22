@@ -38,7 +38,7 @@ export const Gallery = () => {
               style={{
                 height: "100%",
               }}
-              onClick={() => setIndex(k + 1)}
+              onMouseOver={() => setIndex(k + 1)}
             />
           </div>
         ))}
