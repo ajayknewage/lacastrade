@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+//pagination
 @mixin responsive($breakpoint) {
   @if $breakpoint == Forfold {
     @media only screen and (max-width: 280px) {
