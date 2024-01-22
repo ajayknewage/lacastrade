@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import Link from "next/link";
-import PersonalDetails from "./personal-details";
+import { UserDetails } from "../../../components/UserDetails";
 import TableThree from "@/components/Tables/TableThree";
 import Pagination from "@/components/Pagination";
 
@@ -177,7 +177,7 @@ const User = () => {
           </TabList>
 
           <TabPanel>
-            <PersonalDetails />
+            <UserDetails />
           </TabPanel>
           <TabPanel className={"mb-4 md:mb-10 "}>
             <TableThree noBorder />
