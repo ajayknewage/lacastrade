@@ -33,6 +33,11 @@ const CustomModal = () => {
           },
         }}
       >
+        {/* <div className="flex justify-end">
+            <span className="rounded-full px-3 py-1.5 border-black border-2">
+              <FontAwesomeIcon icon={faClose} className="text-black"/>
+            </span>
+          </div> */}
         <h2>Custom Modal</h2>
       </Modal>
     </Fragment>
