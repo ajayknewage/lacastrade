@@ -30,6 +30,6 @@ or
 yarn dev
 ```
 
-### 📄 Author
+### 📄 Customized and Updated
 
 Ajay K ajayk@newagesmb.com
