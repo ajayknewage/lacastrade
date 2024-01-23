@@ -22,8 +22,15 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>
-        <div className="dark:bg-boxdark-2 dark:text-bodydark">
+      <body suppressHydrationWarning={true} className="relative">
+        <div
+          className={`w-full h-full absolute bg-black-2 bg-opacity-20 z-9999 ${
+            sidebarOpen ? "block" : "hidden"
+          }`}
+          id="sidebar-wrapper"
+          onClick={() => setSidebarOpen(false)}
+        ></div>
+        <div className="dark:bg-boxdark-2 dark:text-bodydark ">
           {loading ? (
             <Loader />
           ) : (

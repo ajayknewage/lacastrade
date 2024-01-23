@@ -20,21 +20,26 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
   );
 
-  // close on click outside
-  useEffect(() => {
-    const clickHandler = ({ target }: MouseEvent) => {
-      if (!sidebar.current || !trigger.current) return;
-      if (
-        !sidebarOpen ||
-        sidebar.current.contains(target) ||
-        trigger.current.contains(target)
-      )
-        return;
-      setSidebarOpen(false);
-    };
-    document.addEventListener("click", clickHandler);
-    return () => document.removeEventListener("click", clickHandler);
-  });
+  // // close on click outside
+  // useEffect(() => {
+  //   const clickHandler = ({ target }: MouseEvent) => {
+  //     if (!sidebar.current || !trigger.current) return;
+  //     if (
+  //       !sidebarOpen ||
+  //       sidebar.current.contains(target) ||
+  //       trigger.current.contains(target)
+  //     )
+  //       return;
+  //     setSidebarOpen(false);
+  //   };
+  //   document
+  //     .getElementById("sidebar-wrapper")!
+  //     .addEventListener("click", clickHandler);
+  //   return () =>
+  //     document
+  //       .getElementById("sidebar-wrapper")!
+  //       .removeEventListener("click", clickHandler);
+  // });
 
   // close if the esc key is pressed
   useEffect(() => {
