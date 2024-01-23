@@ -50,8 +50,9 @@ const ResetPassword: FC<{
 
               <div className="flex justify-end gap-4.5">
                 <button
-                  className="flex justify-center rounded bg-white py-2 px-6 font-medium text-gray hover:bg-opacity-95"
+                  className="flex justify-center rounded border border-stroke py-2 px-6 font-medium text-black hover:shadow-1 dark:border-strokedark dark:text-white"
                   type="button"
+                  onClick={() => setIndex(0)}
                 >
                   Cancel
                 </button>

@@ -10,7 +10,7 @@ export const UserDetails = () => {
     <Fragment>
       {index === 0 && <PreviewDetails setIndex={setIndex} />}{" "}
       {index === 1 && <EditDetails setIndex={setIndex} />}
-      {index === 1 && <ResetPassword setIndex={setIndex} />}
+      {index === 2 && <ResetPassword setIndex={setIndex} />}
     </Fragment>
   );
 };
