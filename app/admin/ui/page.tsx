@@ -8,7 +8,6 @@ import CheckboxFour from "@/components/Checkboxes/CheckboxFour";
 import CheckboxOne from "@/components/Checkboxes/CheckboxOne";
 import CheckboxThree from "@/components/Checkboxes/CheckboxThree";
 import CheckboxTwo from "@/components/Checkboxes/CheckboxTwo";
-import ConfirmationPopup from "@/components/ConfirmationPopup";
 import CustomModal from "@/components/CustomModal";
 import Pagination from "@/components/Pagination";
 import SwitcherFour from "@/components/Switchers/SwitcherFour";
@@ -21,6 +20,7 @@ import TableTwo from "@/components/Tables/TableTwo";
 
 import { Metadata } from "next";
 import Link from "next/link";
+import ConfirmationModal from "./ConfirmationModal";
 export const metadata: Metadata = {
   title: "Ui | ReCastTrade",
   description: "",
@@ -1181,7 +1181,7 @@ const Ui = () => {
       {/* <!-- Modal --> */}
       <div className="mb-10 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark p-10 flex gap-10">
         <CustomModal />
-        <ConfirmationPopup text="Are you sure you want to remove this user?" />
+        <ConfirmationModal />
       </div>
       {/* <!-- Modal --> */}
     </>

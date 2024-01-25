@@ -2,7 +2,6 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import Image from "next/image";
 
-import { Metadata } from "next";
 import Link from "next/link";
 import SortButton from "@/components/SortButton";
 import Pagination from "@/components/Pagination";
@@ -11,12 +10,6 @@ import { Fragment, useState } from "react";
 import Search from "@/components/Search";
 import DateRange from "@/components/DateRange";
 import ReactSelect from "react-select";
-
-export const metadata: Metadata = {
-  title: "Products | ReCastTrade",
-  description: "",
-  // other metadata
-};
 
 const productData = [
   {

@@ -13,15 +13,17 @@ const ConfirmationPopup: FC<{
   cancelText?: string;
   confirmVariant?: ButtonTypes;
   cancelVariant?: ButtonTypes;
+  closeHandler: () => void;
+  confirmHandler: () => void;
 }> = ({
   text,
   confirmText = "Yes",
   cancelText = "No",
   confirmVariant = "danger",
   cancelVariant = "black",
+  closeHandler,
+  confirmHandler,
 }) => {
-  const [modal, setModal] = useState(false);
-
   const getButtonClass = (type: ButtonTypes) => {
     switch (type) {
       case "black":
@@ -41,15 +43,9 @@ const ConfirmationPopup: FC<{
 
   return (
     <Fragment>
-      <button
-        onClick={() => setModal(true)}
-        className="inline-flex items-center justify-center bg-primary  py-1.5 px-6 md:py-2  md:px-10 text-center text-xs md:text-sm font-medium text-white hover:bg-opacity-90 md:rounded-md my-4"
-      >
-        Confirmation Popup
-      </button>
       <Modal
-        isOpen={modal}
-        onRequestClose={() => setModal(false)}
+        isOpen
+        onRequestClose={closeHandler}
         contentLabel="Example Modal"
         style={{
           overlay: {
@@ -80,7 +76,7 @@ const ConfirmationPopup: FC<{
             <div className="font-satoshi text-lg mt-2">{text}</div>
             <div className="flex gap-5">
               <button
-                onClick={() => setModal(false)}
+                onClick={closeHandler}
                 className={`uppercase inline-flex items-center justify-center py-1.5 md:py-2 px-10 text-center text-sm font-medium text-white hover:bg-opacity-90 my-4 w-full ${getButtonClass(
                   cancelVariant
                 )}`}
@@ -91,7 +87,7 @@ const ConfirmationPopup: FC<{
                 {cancelText}
               </button>
               <button
-                onClick={() => setModal(false)}
+                onClick={confirmHandler}
                 className={`uppercase inline-flex items-center justify-center py-1.5 md:py-2 px-10 text-center text-sm font-medium text-white hover:bg-opacity-90 my-4 w-full ${getButtonClass(
                   confirmVariant
                 )}`}
