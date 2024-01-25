@@ -103,7 +103,7 @@ const Products = () => {
       <Breadcrumb pageName="Products" />
 
       <div
-        className={`rounded-sm border border-stroke dark:border-strokedark shadow-default bg-white dark:bg-boxdark px-10 sm:px-7.5 mb-5 py-5 flex gap-10`}
+        className={`rounded-sm border border-stroke dark:border-strokedark shadow-default bg-white dark:bg-boxdark px-4 sm:px-7.5 mb-5 py-5 flex gap-x-10 gap-y-5 flex-wrap`}
       >
         <Search />
         <DateRange
@@ -120,7 +120,7 @@ const Products = () => {
           placeholder="Status"
           classNames={{
             container: (props) =>
-              "border-2 border-stroke dark:border-strokedark flex rounded-md min-w-42.5 px-2",
+              "border border-stroke dark:border-strokedark flex rounded-md w-full md:w-auto min-w-42.5 px-2",
             menu: (props) =>
               "bg-white p-2 flex flex-column gap-2 shadow-default dark:bg-boxdark",
             option: (props) => "p-2 cursor-pointer",
@@ -238,7 +238,30 @@ const Products = () => {
             </tbody>
           </table>
 
-          <div className="mt-5 pb-10 flex justify-end px-4 md:px-10">
+          <div className="mt-5 pb-10 flex justify-center sm:justify-between flex-wrap px-4 md:px-10 gap-5">
+            <div className="flex gap-2 items-center">
+              <span>Limit:</span>
+              <ReactSelect
+                defaultValue={selectedOption}
+                onChange={(val) => {}}
+                options={[
+                  { value: "10", label: "10" },
+                  { value: "50", label: "50" },
+                  { value: "100", label: "100" },
+                ]}
+                defaultInputValue={"10"}
+                classNames={{
+                  container: (props) =>
+                    "border border-stroke dark:border-strokedark flex rounded-md w-full md:w-auto min-w-10 px-2 text-sm",
+                  menu: (props) =>
+                    "bg-white p-2 flex flex-column gap-2 shadow-default dark:bg-boxdark",
+                  option: (props) => "p-2 cursor-pointer",
+                  control: (props) => "w-full",
+                  valueContainer: (props) => "cursor-pointer w-full",
+                }}
+                unstyled
+              />
+            </div>
             <Pagination />
           </div>
         </div>

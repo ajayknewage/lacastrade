@@ -1,8 +1,7 @@
 "use client";
 import styles from "./date-range.module.scss";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import moment from "moment";
-import isMobile from "is-mobile";
 import { DateRangePicker, Range } from "react-date-range";
 
 const DateRange: FC<{
@@ -11,8 +10,6 @@ const DateRange: FC<{
   dateRangeHandler: (startDate: Date | null, endDate: Date | null) => void;
 }> = ({ startDate, endDate, dateRangeHandler }) => {
   const [date, setDate] = useState<Range[]>([]);
-  const dropRef = useRef<HTMLButtonElement>(null);
-
   const id = useState(Date.now());
 
   const [show, setShow] = useState(false);
@@ -45,9 +42,9 @@ const DateRange: FC<{
   }, [id]);
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left w-full md:w-min">
       <div
-        className="flex gap-2 items-center border-2 border-stroke dark:border-strokedark rounded-md py-1 px-4 cursor-pointer"
+        className="flex gap-2 items-center border border-stroke dark:border-strokedark rounded-md py-1 px-4 cursor-pointer w-full"
         onClick={() => setShow(true)}
       >
         <div className={`${styles.icon} pr-1`}>
@@ -81,7 +78,7 @@ const DateRange: FC<{
           </svg>
         </div>
         <div
-          className={`text-sm sm:min-w-42.5 py-2 px-4 border-x-2 border-stroke dark:border-strokedark m-0 ${styles.in1}`}
+          className={`text-sm w-full md:w-40 py-2 px-4 border-x-2 border-stroke dark:border-strokedark m-0 ${styles.in1} whitespace-nowrap`}
           style={
             !startDate
               ? {
@@ -93,7 +90,7 @@ const DateRange: FC<{
           {startDate ? moment(startDate).format("MM-DD-YYYY") : "Start Date"}
         </div>
         <div
-          className={`text-sm min-w-42.5 py-2 px-4  m-0 ${styles.in2}`}
+          className={`text-sm w-full md:w-40 py-2 px-4  m-0 ${styles.in2} whitespace-nowrap`}
           style={
             !endDate
               ? {
