@@ -5,23 +5,52 @@ import {
   faSortDesc,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { Dispatch, FC, Fragment, SetStateAction } from "react";
 
-const SortButton = () => {
-  const [sort, setSort] = useState<"asc" | "desc" | "none">("none");
+export type Sort = {
+  field: string;
+  type: "desc" | "asc" | "none";
+};
 
+const SortButton: FC<{
+  field: string;
+  sort: Sort;
+  setSort: Dispatch<SetStateAction<Sort>>;
+  sortHandler: (value: Sort) => void;
+}> = ({ field, sort, setSort, sortHandler }) => {
   return (
     <button
-      onClick={() =>
-        setSort((prev) =>
-          prev === "none" ? "asc" : prev === "asc" ? "desc" : "none"
-        )
-      }
       className="cursor-pointer h-10 px-2"
+      onClick={() =>
+        setSort((prev) => {
+          const _sort: Sort = {
+            field,
+            type:
+              field === prev.field
+                ? prev.type === "none"
+                  ? "asc"
+                  : prev.type === "asc"
+                  ? "desc"
+                  : "none"
+                : "asc",
+          };
+
+          sortHandler(_sort);
+
+          return _sort;
+        })
+      }
     >
-      {sort === "none" && <FontAwesomeIcon icon={faSort} />}
-      {sort === "asc" && <FontAwesomeIcon icon={faSortAsc} />}
-      {sort === "desc" && <FontAwesomeIcon icon={faSortDesc} />}
+      {(sort.type === "none" || sort.field !== field) && (
+        <FontAwesomeIcon icon={faSort} />
+      )}
+      {sort.field === field && (
+        <Fragment>
+          {" "}
+          {sort.type === "asc" && <FontAwesomeIcon icon={faSortAsc} />}
+          {sort.type === "desc" && <FontAwesomeIcon icon={faSortDesc} />}
+        </Fragment>
+      )}
     </button>
   );
 };

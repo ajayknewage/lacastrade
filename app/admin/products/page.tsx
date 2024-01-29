@@ -3,13 +3,17 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import Image from "next/image";
 
 import Link from "next/link";
-import SortButton from "@/components/SortButton";
+import SortButton, { Sort } from "@/components/SortButton";
 import Pagination from "@/components/Pagination";
 import Actions from "./actions";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Search from "@/components/Search";
 import DateRange from "@/components/DateRange";
 import ReactSelect from "react-select";
+import { HTTP } from "@/packages/axios";
+
+import { toast } from "react-toastify";
+import ConfirmationPopup from "@/components/ConfirmationPopup";
 
 const productData = [
   {
@@ -81,7 +85,32 @@ const Products = () => {
     end: null,
   });
 
+  const [sort, setSort] = useState<{
+    field: string;
+    type: "desc" | "asc" | "none";
+  }>({
+    field: "product",
+    type: "asc",
+  });
+
+  const [search, setSearch] = useState<string | null>(null);
   const [selectedOption, setSelectedOption] = useState(null);
+
+  //pagination
+  const [paginationCount, setPaginationCount] = useState(0);
+  const [currentPagination, setCurrentPagination] = useState(0);
+  const [offset, setOffset] = useState(0);
+  const [limit, setLimit] = useState(10);
+  const [totalCount, setTotalCount] = useState(0);
+
+  //fetch products
+  const fetchProdcuts = async (params: any) => {
+    try {
+      // const response = await HTTP.get("/abcd");
+    } catch (error: any) {
+      toast.error("An error occured", { theme: "colored" });
+    }
+  };
 
   //date range handler
   const dateRangeHandler = (start: Date | null, end: Date | null) => {
@@ -91,6 +120,18 @@ const Products = () => {
     });
   };
 
+  //searchHandler
+  const searchHandler = (value: string | null) => {
+    setSearch(value);
+  };
+
+  //sortHandler
+  const sortHandler = (value: Sort) => {};
+
+  useEffect(() => {
+    fetchProdcuts({});
+  }, []);
+
   return (
     <Fragment>
       <Breadcrumb pageName="Products" />
@@ -98,7 +139,7 @@ const Products = () => {
       <div
         className={`rounded-sm border border-stroke dark:border-strokedark shadow-default bg-white dark:bg-boxdark px-4 sm:px-7.5 mb-5 py-5 flex gap-x-10 gap-y-5 flex-wrap`}
       >
-        <Search />
+        <Search searchHandler={searchHandler} value={search} />
         <DateRange
           dateRangeHandler={dateRangeHandler}
           endDate={dates.end}
@@ -132,32 +173,62 @@ const Products = () => {
               <tr className="bg-gray-2 text-left dark:bg-meta-4">
                 <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
                   <span className="font-medium">Product</span>
-                  <SortButton />
+                  <SortButton
+                    field="product"
+                    sort={sort}
+                    setSort={setSort}
+                    sortHandler={sortHandler}
+                  />
                 </th>
 
                 <th className="min-w-[150px] py-4 px-4 font-medium text-black dark:text-white">
                   <span className="font-medium">Owner</span>
-                  <SortButton />
+                  <SortButton
+                    field="owner"
+                    sort={sort}
+                    setSort={setSort}
+                    sortHandler={sortHandler}
+                  />
                 </th>
 
                 <th className="min-w-[150px] py-4 px-4 font-medium text-black dark:text-white">
                   <span className="font-medium">Category</span>
-                  <SortButton />
+                  <SortButton
+                    field="category"
+                    sort={sort}
+                    setSort={setSort}
+                    sortHandler={sortHandler}
+                  />
                 </th>
 
                 <th className="min-w-[150px] py-4 px-4 font-medium text-black dark:text-white">
                   <span className="font-medium">Price</span>
-                  <SortButton />
+                  <SortButton
+                    field="price"
+                    sort={sort}
+                    setSort={setSort}
+                    sortHandler={sortHandler}
+                  />
                 </th>
 
                 <th className="min-w-[150px] py-4 px-4 font-medium text-black dark:text-white">
                   <span className="font-medium">Sold</span>
-                  <SortButton />
+                  <SortButton
+                    field="sold"
+                    sort={sort}
+                    setSort={setSort}
+                    sortHandler={sortHandler}
+                  />
                 </th>
 
                 <th className="min-w-[120px] py-4 px-4 font-medium text-black dark:text-white">
                   Status
-                  <SortButton />
+                  <SortButton
+                    field="status"
+                    sort={sort}
+                    setSort={setSort}
+                    sortHandler={sortHandler}
+                  />
                 </th>
                 <th className="py-4 px-4 font-medium text-black dark:text-white">
                   Actions
@@ -255,7 +326,13 @@ const Products = () => {
                 unstyled
               />
             </div>
-            <Pagination />
+            <Pagination
+              currentPagination={currentPagination}
+              paginationCount={paginationCount}
+              limit={limit}
+              setCurrentPagination={setCurrentPagination}
+              fetchApi={fetchProdcuts}
+            />
           </div>
         </div>
       </div>

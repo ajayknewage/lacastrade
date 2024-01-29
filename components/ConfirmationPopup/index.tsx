@@ -63,7 +63,7 @@ const ConfirmationPopup: FC<{
           },
         }}
       >
-        <div className="max-w-180 lg:min-w-75 py-2 px-10">
+        <div className="max-w-180 lg:min-w-[400px] py-2 px-10">
           <div>
             <div className="flex justify-center animate-pulse">
               <Image
@@ -73,7 +73,7 @@ const ConfirmationPopup: FC<{
                 height={50}
               />
             </div>
-            <div className="font-satoshi text-lg mt-2">{text}</div>
+            <div className="font-satoshi text-lg mt-2 text-center">{text}</div>
             <div className="flex gap-5">
               <button
                 onClick={closeHandler}

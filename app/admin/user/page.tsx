@@ -183,7 +183,7 @@ const User = () => {
             <TableThree noBorder />
             <div className="mt-5 flex justify-end px-4 md:px-10">
               {" "}
-              <Pagination />
+              {/* <Pagination /> */}
             </div>
           </TabPanel>
         </Tabs>

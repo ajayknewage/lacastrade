@@ -1,6 +1,5 @@
 import { BRAND } from "@/types/brand";
 import Image from "next/image";
-import SortButton from "../SortButton";
 
 const brandData: BRAND[] = [
   {
@@ -58,31 +57,26 @@ const TableOne = () => {
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Source
             </h5>
-            <SortButton />
           </div>
           <div className="p-2.5 text-center xl:p-5 flex items-center gap-2">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Visitors
             </h5>
-            <SortButton />
           </div>
           <div className="p-2.5 text-center xl:p-5 flex items-center gap-2">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Revenues
             </h5>
-            <SortButton />
           </div>
           <div className="p-2.5 text-center xl:p-5 flex items-center gap-2">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Sales
             </h5>
-            <SortButton />
           </div>
           <div className="p-2.5 text-center xl:p-5 flex items-center gap-2">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Conversion
             </h5>
-            <SortButton />
           </div>
         </div>
 

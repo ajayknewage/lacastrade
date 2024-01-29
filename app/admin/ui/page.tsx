@@ -21,6 +21,7 @@ import TableTwo from "@/components/Tables/TableTwo";
 import { Metadata } from "next";
 import Link from "next/link";
 import ConfirmationModal from "./ConfirmationModal";
+import PaginationClient from "./PaginationCleint";
 export const metadata: Metadata = {
   title: "Ui | ReCastTrade",
   description: "",
@@ -1174,7 +1175,7 @@ const Ui = () => {
 
       {/* <!-- Pagination --> */}
       <div className="mb-10 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark p-10">
-        <Pagination />
+        <PaginationClient />
       </div>
       {/* <!-- Pagination --> */}
 
