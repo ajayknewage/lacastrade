@@ -9,7 +9,13 @@ const DateRange: FC<{
   endDate: Date | null;
   dateRangeHandler: (startDate: Date | null, endDate: Date | null) => void;
 }> = ({ startDate, endDate, dateRangeHandler }) => {
-  const [date, setDate] = useState<Range[]>([]);
+  const [date, setDate] = useState<Range[]>([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
   const id = useState(Date.now());
 
   const [show, setShow] = useState(false);
